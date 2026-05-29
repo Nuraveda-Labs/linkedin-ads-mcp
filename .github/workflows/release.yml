@@ -1,0 +1,28 @@
+name: release
+
+# Publishes to PyPI via Trusted Publishing (OIDC) — no API token stored.
+# Fires when a v* tag is pushed, or manually via the Actions tab.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  pypi-publish:
+    runs-on: ubuntu-latest
+    environment: pypi          # must match the PyPI pending-publisher "environment"
+    permissions:
+      id-token: write          # REQUIRED for OIDC trusted publishing
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Build sdist + wheel
+        run: uv build
+
+      - name: Publish to PyPI (Trusted Publishing)
+        uses: pypa/gh-action-pypi-publish@release/v1
+        # No `password:` — OIDC handles auth. Uploads everything in dist/.
