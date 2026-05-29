@@ -20,6 +20,34 @@ rules so you don't have to.
 
 ---
 
+## ⚡ Skip the setup — connect LinkedIn through Mesh Pilot
+
+LinkedIn's Marketing API gate is the real hassle: you apply for the
+**Advertising API** product, wait for approval (days, not always granted),
+run an OAuth dance, and manage refresh-token rotation yourself.
+
+**Don't want any of that?** [**Mesh Pilot**](https://meshpilot.app) runs this
+MCP for you behind an already-approved LinkedIn Marketing app. Connect your
+LinkedIn account in one click and you're driving your ad accounts from your
+AI client immediately — **no API application, no OAuth setup, no token
+management.**
+
+<p>
+  <a href="https://meshpilot.app"><img src="https://img.shields.io/badge/Connect%20LinkedIn%20via%20Mesh%20Pilot-→-7c3aed?style=for-the-badge" alt="Connect LinkedIn via Mesh Pilot"></a>
+</p>
+
+| | Self-host (this repo) | Mesh Pilot (hosted) |
+|---|---|---|
+| LinkedIn Marketing API approval | you apply + wait | **already approved** |
+| OAuth + token rotation | you manage | **handled for you** |
+| Setup time | hours–days | **one click** |
+| Cost | free (MIT) | see [meshpilot.app](https://meshpilot.app) |
+| Runs in your own infra | ✅ | hosted |
+
+Prefer to run it yourself? Keep reading — the full self-host path is below.
+
+---
+
 ## Why this exists
 
 If you've tried calling LinkedIn's `/rest/adAnalytics` endpoint by hand
@@ -46,7 +74,7 @@ uv pip install -e .          # or: pip install -e .
 > A PyPI release under the name `linkedin-ads-mcp` is planned. The prior
 > package name on PyPI is `glitch-grow-linkedin-ad-mcp` (legacy identity).
 
-## OAuth setup
+## OAuth setup (self-host path)
 
 1. Create a LinkedIn app at <https://www.linkedin.com/developers/apps>.
 2. On the **Products** tab, request **Advertising API** (auto-approved if
