@@ -2,6 +2,7 @@
 
 # LinkedIn Ads MCP
 
+[![PyPI](https://img.shields.io/pypi/v/linkedin-ads-mcp.svg)](https://pypi.org/project/linkedin-ads-mcp/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Part of Mesh Pilot](https://img.shields.io/badge/Mesh%20Pilot-OSS%20tooling-7c3aed.svg)](https://meshpilot.app)
@@ -63,7 +64,13 @@ This server has all those rules already encoded.
 
 ## Install
 
-**From source (works today):**
+```bash
+pip install linkedin-ads-mcp
+# or:
+uv add linkedin-ads-mcp
+```
+
+**From source:**
 
 ```bash
 git clone https://github.com/Nuraveda-Labs/linkedin-ads-mcp.git
@@ -71,8 +78,9 @@ cd linkedin-ads-mcp
 uv pip install -e .          # or: pip install -e .
 ```
 
-> A PyPI release under the name `linkedin-ads-mcp` is planned. The prior
-> package name on PyPI is `glitch-grow-linkedin-ad-mcp` (legacy identity).
+> On PyPI as [`linkedin-ads-mcp`](https://pypi.org/project/linkedin-ads-mcp/).
+> The prior package name `glitch-grow-linkedin-ad-mcp` (v0.1.1) is legacy and
+> frozen — use `linkedin-ads-mcp` going forward.
 
 ## OAuth setup (self-host path)
 
