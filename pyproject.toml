@@ -1,8 +1,8 @@
 [project]
 name = "linkedin-ads-mcp"
-version = "0.2.0"
+version = "0.3.0"
 requires-python = ">=3.10"
-license = "MIT"
+license = { file = "LICENSE.md" }
 dependencies = [
     "httpx>=0.27",
     "mcp[cli]>=1.2.0",
@@ -16,7 +16,6 @@ authors = [
 keywords = ["LinkedIn", "LinkedIn Ads", "Marketing API", "MCP", "Model Context Protocol"]
 classifiers = [
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",

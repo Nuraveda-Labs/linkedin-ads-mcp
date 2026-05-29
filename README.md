@@ -4,8 +4,8 @@
 
 [![PyPI](https://img.shields.io/pypi/v/linkedin-ads-mcp.svg)](https://pypi.org/project/linkedin-ads-mcp/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Part of Mesh Pilot](https://img.shields.io/badge/Mesh%20Pilot-OSS%20tooling-7c3aed.svg)](https://meshpilot.app)
+[![License: FSL-1.1-MIT](https://img.shields.io/badge/license-FSL--1.1--MIT-7c3aed.svg)](LICENSE.md)
+[![Part of Mesh Pilot](https://img.shields.io/badge/Mesh%20Pilot-tooling-7c3aed.svg)](https://meshpilot.app)
 
 **Model Context Protocol (MCP) server for the LinkedIn Marketing API.**
 Read campaigns, pull analytics, create campaign groups + campaigns, flip
@@ -16,8 +16,9 @@ There's no official LinkedIn MCP. This fills the gap with a thin,
 correctness-first wrapper that handles LinkedIn's quirky restli encoding
 rules so you don't have to.
 
-> Maintained by [Nuraveda Lab](https://nuraveda.com) as open-source tooling
-> alongside the [Mesh Pilot](https://meshpilot.app) agent suite. MIT licensed.
+> Maintained by [Nuraveda Lab](https://nuraveda.com) as source-available tooling
+> alongside the [Mesh Pilot](https://meshpilot.app) agent suite. Free to use under
+> [FSL-1.1-MIT](LICENSE.md) — converts to MIT after two years.
 
 ---
 
@@ -42,7 +43,7 @@ management.**
 | LinkedIn Marketing API approval | you apply + wait | **already approved** |
 | OAuth + token rotation | you manage | **handled for you** |
 | Setup time | hours–days | **one click** |
-| Cost | free (MIT) | see [meshpilot.app](https://meshpilot.app) |
+| Cost | free ([FSL-1.1-MIT](LICENSE.md)) | see [meshpilot.app](https://meshpilot.app) |
 | Runs in your own infra | ✅ | hosted |
 
 Prefer to run it yourself? Keep reading — the full self-host path is below.
@@ -175,12 +176,23 @@ it to the sponsored-ad surface is on the roadmap. PRs welcome.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+[**FSL-1.1-MIT**](LICENSE.md) (Functional Source License). **Free for any use
+except building a competing product or service** — including a competing
+LinkedIn-ads MCP, agent platform, or hosted offering that substitutes for this
+software or for [Mesh Pilot](https://meshpilot.app).
+
+Permitted: internal use, modification, redistribution, client/professional
+services, and non-commercial research/education. Each released version
+**automatically converts to the MIT License two years after its release**, so
+the restriction is time-boxed, not permanent.
+
+> Earlier `0.2.0` (and the legacy `glitch-grow-linkedin-ad-mcp` `0.1.1`) were
+> published under MIT and remain MIT — the FSL terms apply to `0.3.0` onward.
 
 ## About
 
-Built and maintained by [Nuraveda Lab](https://nuraveda.com), open-sourced
-as part of the [Mesh Pilot](https://meshpilot.app) growth-tooling suite.
+Built and maintained by [Nuraveda Lab](https://nuraveda.com) as source-available
+tooling in the [Mesh Pilot](https://meshpilot.app) growth suite.
 Hardened against real LinkedIn Marketing API behavior in production. If you
 hit a restli encoding edge case we missed, open an issue with the offending
 URL and we'll codify the fix.
