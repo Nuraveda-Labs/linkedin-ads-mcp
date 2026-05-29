@@ -25,4 +25,7 @@ jobs:
 
       - name: Publish to PyPI (Trusted Publishing)
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # Re-runs / partial uploads won't fail the job on already-present files.
+          skip-existing: true
         # No `password:` — OIDC handles auth. Uploads everything in dist/.
