@@ -1,7 +1,7 @@
 name: release
 
-# Publishes to PyPI via Trusted Publishing (OIDC) — no API token stored.
-# Fires when a v* tag is pushed, or manually via the Actions tab.
+# Publishes to PyPI using the org-level PYPI_API_TOKEN secret (owner-independent, so it keeps
+# working after the repo moved into the Meshpilot-AGI org). Fires on a v* tag or manual dispatch.
 
 on:
   push:
@@ -11,9 +11,6 @@ on:
 jobs:
   pypi-publish:
     runs-on: ubuntu-latest
-    environment: pypi          # must match the PyPI pending-publisher "environment"
-    permissions:
-      id-token: write          # REQUIRED for OIDC trusted publishing
     steps:
       - uses: actions/checkout@v4
 
@@ -23,9 +20,9 @@ jobs:
       - name: Build sdist + wheel
         run: uv build
 
-      - name: Publish to PyPI (Trusted Publishing)
+      - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
           # Re-runs / partial uploads won't fail the job on already-present files.
           skip-existing: true
-        # No `password:` — OIDC handles auth. Uploads everything in dist/.
